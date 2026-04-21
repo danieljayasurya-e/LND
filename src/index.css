@@ -1,0 +1,80 @@
+/* ===== GLOBAL CSS VARIABLES — change these to retheme the entire site ===== */
+:root {
+  /* Aqua / Teal Palette */
+  --color-primary: #00bcd4;
+  --color-primary-dark: #0097a7;
+  --color-primary-light: #b2ebf2;
+  --color-primary-xlight: #e0f7fa;
+  --color-accent: #00e5ff;
+  --color-accent-glow: rgba(0, 229, 255, 0.25);
+
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-off-white: #f8fdfd;
+  --color-surface: #f0fbfc;
+  --color-border: #b2ebf2;
+  --color-text-main: #0d2b2e;
+  --color-text-muted: #4a7a80;
+  --color-text-light: #7ab8bf;
+
+  /* Dark surfaces */
+  --color-dark: #042025;
+  --color-dark-surface: #072a30;
+  --color-dark-card: #0b353d;
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Spacing */
+  --section-padding: 96px 0;
+  --container-max: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(0, 188, 212, 0.10);
+  --shadow-card-hover: 0 12px 40px rgba(0, 188, 212, 0.22);
+  --shadow-hero: 0 8px 60px rgba(0, 188, 212, 0.18);
+
+  /* Transitions */
+  --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--color-text-main);
+  background: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { text-decoration: none; color: inherit; }
+
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-surface); }
+::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 3px; }
