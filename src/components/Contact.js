@@ -30,7 +30,7 @@ export default function Contact() {
     if (errors[field]) setErrors(e => ({ ...e, [field]: '' }));
   };
 
-  const waMsg = encodeURIComponent("Hi LnD! I'm interested in enrolling. Please share more details.");
+  const waMsg = encodeURIComponent("Hi LnT! I'm interested in enrolling. Please share more details.");
   const waLink = `https://wa.me/919999999999?text=${waMsg}`;
 
   return (

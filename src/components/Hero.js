@@ -1,14 +1,103 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
 const slides = [
-  { course: 'Java', tagline: 'Build powerful backend systems', emoji: '☕', color: '#e65c00', bg: 'linear-gradient(135deg, #042025 60%, #073a45 100%)' },
-  { course: 'Python', tagline: 'From basics to data science', emoji: '🐍', color: '#3ec6a0', bg: 'linear-gradient(135deg, #042025 60%, #063328 100%)' },
-  { course: 'C Programming', tagline: 'Master the foundation of programming', emoji: '⚙️', color: '#7986cb', bg: 'linear-gradient(135deg, #042025 60%, #1a1a3e 100%)' },
-  { course: 'C++', tagline: 'Object-oriented power in your hands', emoji: '🔷', color: '#29b6f6', bg: 'linear-gradient(135deg, #042025 60%, #003a50 100%)' },
-  { course: 'AI & ML', tagline: 'Step into the future of intelligence', emoji: '🤖', color: '#ab47bc', bg: 'linear-gradient(135deg, #042025 60%, #2a0a30 100%)' },
-  { course: 'App Development', tagline: 'Create apps for Android & iOS', emoji: '📱', color: '#26c6da', bg: 'linear-gradient(135deg, #042025 60%, #003f45 100%)' },
-  { course: 'MERN Stack', tagline: 'Full-stack web development, end to end', emoji: '🌐', color: '#66bb6a', bg: 'linear-gradient(135deg, #042025 60%, #0d2d10 100%)' },
-  { course: 'SQL', tagline: 'Manage and query data like a pro', emoji: '🗄️', color: '#ffa726', bg: 'linear-gradient(135deg, #042025 60%, #2d1a00 100%)' },
+  {
+    course: 'Java',
+    tagline: 'Build powerful backend systems',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+    color: '#e65c00',
+    bg: 'linear-gradient(135deg, #042025 60%, #073a45 100%)',
+    stackLogos: [
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', label: 'Java' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg', label: 'Spring' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg', label: 'Maven' },
+    ],
+  },
+  {
+    course: 'Python',
+    tagline: 'From basics to data science',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+    color: '#3ec6a0',
+    bg: 'linear-gradient(135deg, #042025 60%, #063328 100%)',
+    stackLogos: [
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', label: 'Python' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg', label: 'NumPy' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg', label: 'Pandas' },
+    ],
+  },
+  {
+    course: 'C Programming',
+    tagline: 'Master the foundation of programming',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg',
+    color: '#7986cb',
+    bg: 'linear-gradient(135deg, #042025 60%, #1a1a3e 100%)',
+    stackLogos: [
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg', label: 'C' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', label: 'Linux' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gcc/gcc-original.svg', label: 'GCC' },
+    ],
+  },
+  {
+    course: 'C++',
+    tagline: 'Object-oriented power in your hands',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
+    color: '#29b6f6',
+    bg: 'linear-gradient(135deg, #042025 60%, #003a50 100%)',
+    stackLogos: [
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg', label: 'C++' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cmake/cmake-original.svg', label: 'CMake' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', label: 'Linux' },
+    ],
+  },
+  {
+    course: 'AI & ML',
+    tagline: 'Step into the future of intelligence',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
+    color: '#ab47bc',
+    bg: 'linear-gradient(135deg, #042025 60%, #2a0a30 100%)',
+    stackLogos: [
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg', label: 'TensorFlow' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg', label: 'PyTorch' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', label: 'Python' },
+    ],
+  },
+  {
+    course: 'App Development',
+    tagline: 'Create apps for Android & iOS',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
+    color: '#26c6da',
+    bg: 'linear-gradient(135deg, #042025 60%, #003f45 100%)',
+    stackLogos: [
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg', label: 'Flutter' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', label: 'React Native' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg', label: 'Dart' },
+    ],
+  },
+  {
+    course: 'MERN Stack',
+    tagline: 'Full-stack web development, end to end',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    color: '#66bb6a',
+    bg: 'linear-gradient(135deg, #042025 60%, #0d2d10 100%)',
+    stackLogos: [
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', label: 'MongoDB' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg', label: 'Express' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', label: 'React' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', label: 'Node.js' },
+    ],
+  },
+  {
+    course: 'SQL',
+    tagline: 'Manage and query data like a pro',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+    color: '#ffa726',
+    bg: 'linear-gradient(135deg, #042025 60%, #2d1a00 100%)',
+    stackLogos: [
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', label: 'MySQL' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', label: 'PostgreSQL' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg', label: 'SQLite' },
+    ],
+  },
 ];
 
 export default function Hero() {
@@ -76,7 +165,41 @@ export default function Hero() {
           align-items: center;
           width: 100%;
         }
-        .hero-left {}
+        /* ---- Company branding above course name ---- */
+        .hero-company {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 18px;
+        }
+        .hero-company-logo {
+          width: 38px; height: 38px;
+          background: var(--color-primary);
+          border-radius: 10px;
+          display: flex; align-items: center; justify-content: center;
+          flex-shrink: 0;
+          box-shadow: 0 4px 16px rgba(0,188,212,0.4);
+        }
+        .hero-company-name {
+          font-family: var(--font-display);
+          font-size: 15px;
+          font-weight: 700;
+          color: rgba(255,255,255,0.9);
+          letter-spacing: 0.5px;
+        }
+        .hero-company-name span { color: var(--color-accent); }
+        .hero-company-divider {
+          width: 1px; height: 18px;
+          background: rgba(255,255,255,0.2);
+          margin: 0 2px;
+        }
+        .hero-company-tagline {
+          font-size: 12px;
+          color: rgba(255,255,255,0.4);
+          font-weight: 400;
+          letter-spacing: 0.3px;
+        }
+        /* ---- Badge ---- */
         .hero-badge {
           display: inline-flex;
           align-items: center;
@@ -90,7 +213,7 @@ export default function Hero() {
           color: var(--color-accent);
           letter-spacing: 0.5px;
           text-transform: uppercase;
-          margin-bottom: 24px;
+          margin-bottom: 20px;
         }
         .hero-badge::before {
           content: '';
@@ -105,40 +228,41 @@ export default function Hero() {
         }
         .hero-course-name {
           font-family: var(--font-display);
-          font-size: clamp(48px, 7vw, 80px);
+          font-size: clamp(44px, 6.5vw, 76px);
           font-weight: 800;
           line-height: 1.05;
           color: var(--color-white);
-          margin-bottom: 20px;
+          margin-bottom: 16px;
           opacity: 1;
           transition: opacity 0.3s ease;
         }
         .hero-course-name.fade { opacity: 0; }
         .hero-course-name .accent { color: var(--color-accent); }
         .hero-tagline {
-          font-size: 18px;
-          color: rgba(255,255,255,0.65);
-          margin-bottom: 40px;
-          font-weight: 300;
+          font-size: 17px;
+          color: rgba(255,255,255,0.6);
+          margin-bottom: 36px;
+          font-weight: 400;
           opacity: 1;
           transition: opacity 0.3s ease;
+          line-height: 1.6;
         }
         .hero-tagline.fade { opacity: 0; }
         .hero-cta-row {
           display: flex;
-          gap: 16px;
+          gap: 14px;
           align-items: center;
           flex-wrap: wrap;
         }
         .btn-primary {
           background: var(--color-primary);
           color: var(--color-white);
-          padding: 16px 32px;
+          padding: 14px 30px;
           border-radius: var(--radius-md);
           font-family: var(--font-display);
           font-size: 15px;
-          font-weight: 700;
-          letter-spacing: 0.3px;
+          font-weight: 600;
+          letter-spacing: 0.2px;
           transition: var(--transition);
           box-shadow: 0 6px 30px rgba(0,188,212,0.35);
           display: inline-flex;
@@ -153,7 +277,7 @@ export default function Hero() {
         .btn-outline {
           border: 1.5px solid rgba(255,255,255,0.25);
           color: rgba(255,255,255,0.8);
-          padding: 16px 28px;
+          padding: 14px 26px;
           border-radius: var(--radius-md);
           font-size: 15px;
           font-weight: 500;
@@ -170,24 +294,25 @@ export default function Hero() {
         .hero-stats {
           display: flex;
           gap: 40px;
-          margin-top: 56px;
-          padding-top: 40px;
+          margin-top: 48px;
+          padding-top: 36px;
           border-top: 1px solid rgba(255,255,255,0.08);
         }
-        .hero-stat {}
         .hero-stat-num {
           font-family: var(--font-display);
-          font-size: 32px;
+          font-size: 30px;
           font-weight: 800;
           color: var(--color-accent);
         }
         .hero-stat-label {
-          font-size: 12px;
-          color: rgba(255,255,255,0.45);
+          font-size: 11px;
+          color: rgba(255,255,255,0.4);
           text-transform: uppercase;
-          letter-spacing: 0.5px;
+          letter-spacing: 0.6px;
           margin-top: 2px;
+          font-weight: 500;
         }
+        /* ---- Right: slide visual ---- */
         .hero-right {
           display: flex;
           flex-direction: column;
@@ -197,7 +322,7 @@ export default function Hero() {
           background: rgba(255,255,255,0.04);
           border: 1px solid rgba(255,255,255,0.08);
           border-radius: var(--radius-xl);
-          padding: 48px 40px;
+          padding: 44px 40px 36px;
           text-align: center;
           position: relative;
           overflow: hidden;
@@ -207,35 +332,78 @@ export default function Hero() {
         .slide-visual::before {
           content: '';
           position: absolute; inset: 0;
-          background: radial-gradient(circle at 50% 0%, rgba(0,229,255,0.08) 0%, transparent 70%);
+          background: radial-gradient(circle at 50% 0%, rgba(0,229,255,0.07) 0%, transparent 70%);
         }
-        .slide-emoji {
-          font-size: 80px;
-          line-height: 1;
-          margin-bottom: 20px;
+        /* Main course logo */
+        .slide-logo {
+          width: 96px; height: 96px;
+          object-fit: contain;
+          margin: 0 auto 20px;
           display: block;
+          position: relative; z-index: 1;
+          filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4));
+          transition: transform 0.3s ease;
         }
+        .slide-visual:hover .slide-logo { transform: scale(1.06); }
         .slide-course-label {
           font-family: var(--font-display);
-          font-size: 24px;
+          font-size: 22px;
           font-weight: 700;
           color: var(--color-white);
-          margin-bottom: 8px;
+          margin-bottom: 6px;
+          position: relative; z-index: 1;
         }
         .slide-course-sub {
-          font-size: 14px;
-          color: rgba(255,255,255,0.45);
+          font-size: 13px;
+          color: rgba(255,255,255,0.42);
+          position: relative; z-index: 1;
+          margin-bottom: 24px;
         }
+        /* Tech stack row */
+        .slide-stack {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          position: relative; z-index: 1;
+          padding-top: 20px;
+          border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .stack-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 6px;
+        }
+        .stack-logo {
+          width: 32px; height: 32px;
+          object-fit: contain;
+          background: rgba(255,255,255,0.06);
+          border-radius: 8px;
+          padding: 5px;
+          border: 1px solid rgba(255,255,255,0.08);
+          transition: var(--transition);
+        }
+        .stack-logo:hover {
+          background: rgba(0,229,255,0.1);
+          border-color: rgba(0,229,255,0.2);
+        }
+        .stack-label {
+          font-size: 10px;
+          color: rgba(255,255,255,0.35);
+          font-weight: 500;
+        }
+        /* Dots + arrows */
         .slide-indicators {
           display: flex;
           justify-content: center;
           gap: 8px;
-          padding: 16px;
+          padding: 12px;
         }
         .dot {
           width: 8px; height: 8px;
           border-radius: 4px;
-          background: rgba(255,255,255,0.2);
+          background: rgba(255,255,255,0.18);
           border: none;
           cursor: pointer;
           transition: var(--transition);
@@ -271,11 +439,11 @@ export default function Hero() {
         @media (max-width: 900px) {
           .hero-content {
             grid-template-columns: 1fr;
-            gap: 48px;
+            gap: 40px;
             padding: 100px 24px 60px;
           }
           .hero-right { order: -1; }
-          .slide-visual { padding: 36px 24px; }
+          .slide-visual { padding: 32px 24px 28px; }
           .hero-stats { gap: 24px; }
         }
       `}</style>
@@ -290,7 +458,21 @@ export default function Hero() {
         <div className="hero-grid" />
 
         <div className="hero-content">
+          {/* ---- LEFT ---- */}
           <div className="hero-left">
+            {/* Always-visible company branding */}
+            <div className="hero-company">
+              <div className="hero-company-logo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 7l4 4-4 4M11 15h6" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="19" cy="12" r="2" fill="#fff"/>
+                </svg>
+              </div>
+              <span className="hero-company-name">L<span>n</span>T</span>
+              <div className="hero-company-divider" />
+              <span className="hero-company-tagline">Learn from Professionals</span>
+            </div>
+
             <div className="hero-badge">8 Industry Courses</div>
 
             <h1 className={`hero-course-name${animating ? ' fade' : ''}`}>
@@ -302,7 +484,14 @@ export default function Hero() {
               <a href="#contact" className="btn-primary" onClick={scrollToContact}>
                 Enroll Now →
               </a>
-              <a href="#programs" className="btn-outline" onClick={(e) => { e.preventDefault(); document.getElementById('programs')?.scrollIntoView({ behavior:'smooth' }); }}>
+              <a
+                href="#programs"
+                className="btn-outline"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 View All Courses
               </a>
             </div>
@@ -323,11 +512,26 @@ export default function Hero() {
             </div>
           </div>
 
+          {/* ---- RIGHT ---- */}
           <div className="hero-right">
             <div className={`slide-visual${animating ? ' fade' : ''}`}>
-              <span className="slide-emoji">{slide.emoji}</span>
+              <img
+                src={slide.logo}
+                alt={slide.course}
+                className="slide-logo"
+              />
               <div className="slide-course-label">{slide.course}</div>
               <div className="slide-course-sub">{slide.tagline}</div>
+
+              {/* Tech stack row */}
+              <div className="slide-stack">
+                {slide.stackLogos.map((item, i) => (
+                  <div className="stack-item" key={i}>
+                    <img src={item.src} alt={item.label} className="stack-logo" />
+                    <span className="stack-label">{item.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="slide-indicators">

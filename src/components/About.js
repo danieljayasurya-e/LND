@@ -133,7 +133,7 @@ export default function About() {
         <div className="container">
           <div className="about-inner">
             <div className="about-left">
-              <span className="section-tag">About LnD</span>
+              <span className="section-tag">About LnT</span>
               <h2 className="section-title">
                 Where Industry Meets <span className="accent">Learning</span>
               </h2>
@@ -141,7 +141,7 @@ export default function About() {
                 We are a team of passionate IT professionals committed to bridging the skills gap in today's rapidly evolving tech industry. Our sessions are conducted in Tamil, making technical concepts easier to understand and apply.
               </p>
               <p className="about-desc" style={{marginTop: '-16px'}}>
-                What sets LnD apart is our team of highly skilled trainers who are <strong style={{color:'var(--color-primary-dark)'}}>active IT industry professionals</strong> — bringing real-world challenges directly into the classroom and ensuring learners stay aligned with current technologies, tools, and best practices.
+                What sets LnT apart is our team of highly skilled trainers who are <strong style={{color:'var(--color-primary-dark)'}}>active IT industry professionals</strong> — bringing real-world challenges directly into the classroom and ensuring learners stay aligned with current technologies, tools, and best practices.
               </p>
               <div className="about-colleges">
                 <div className="about-colleges-label">✅ Successfully trained at</div>

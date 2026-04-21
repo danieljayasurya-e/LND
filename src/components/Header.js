@@ -61,6 +61,7 @@ export default function Header() {
           display: flex;
           align-items: center;
           gap: 12px;
+          text-decoration: none;
         }
         .logo-icon {
           width: 44px; height: 44px;
@@ -71,6 +72,7 @@ export default function Header() {
           justify-content: center;
           position: relative;
           overflow: hidden;
+          flex-shrink: 0;
         }
         .logo-icon::before {
           content: '';
@@ -81,28 +83,40 @@ export default function Header() {
           border-radius: 50%;
           opacity: 0.4;
         }
+        /* Default (over dark hero): white text */
         .logo-text {
           font-family: var(--font-display);
           font-size: 22px;
           font-weight: 800;
-          color: var(--color-dark);
+          color: #ffffff;
           letter-spacing: -0.5px;
+          transition: color 0.28s ease;
         }
-        .logo-text span { color: var(--color-primary); }
+        .logo-text .logo-accent { color: var(--color-accent); }
+        /* Scrolled: dark text */
+        .header.scrolled .logo-text { color: var(--color-dark); }
+        .header.scrolled .logo-text .logo-accent { color: var(--color-primary); }
+
         .nav { display: flex; align-items: center; gap: 4px; }
+
+        /* Default: white nav links on dark hero */
         .nav a {
           font-family: var(--font-body);
           font-size: 14px;
           font-weight: 500;
-          color: var(--color-text-muted);
+          color: rgba(255,255,255,0.85);
           padding: 8px 16px;
           border-radius: 8px;
           transition: var(--transition);
           position: relative;
         }
-        .nav a:hover, .nav a.active {
-          color: var(--color-primary-dark);
-          background: var(--color-primary-xlight);
+        .nav a:hover {
+          color: var(--color-accent);
+          background: rgba(255,255,255,0.08);
+        }
+        .nav a.active {
+          color: var(--color-accent);
+          background: rgba(255,255,255,0.08);
         }
         .nav a.active::after {
           content: '';
@@ -110,8 +124,22 @@ export default function Header() {
           bottom: 4px; left: 50%; transform: translateX(-50%);
           width: 4px; height: 4px;
           border-radius: 50%;
+          background: var(--color-accent);
+        }
+
+        /* Scrolled: muted nav links */
+        .header.scrolled .nav a {
+          color: var(--color-text-muted);
+        }
+        .header.scrolled .nav a:hover,
+        .header.scrolled .nav a.active {
+          color: var(--color-primary-dark);
+          background: var(--color-primary-xlight);
+        }
+        .header.scrolled .nav a.active::after {
           background: var(--color-primary);
         }
+
         .cta-btn {
           background: var(--color-primary);
           color: var(--color-white) !important;
@@ -119,15 +147,17 @@ export default function Header() {
           border-radius: 10px !important;
           font-weight: 600 !important;
           font-size: 14px !important;
-          box-shadow: 0 4px 16px rgba(0,188,212,0.28);
+          box-shadow: 0 4px 16px rgba(0,188,212,0.35);
           transition: var(--transition);
         }
         .cta-btn:hover {
           background: var(--color-primary-dark) !important;
           background-color: var(--color-primary-dark) !important;
           transform: translateY(-1px);
-          box-shadow: 0 6px 24px rgba(0,188,212,0.4) !important;
+          box-shadow: 0 6px 24px rgba(0,188,212,0.5) !important;
         }
+
+        /* Hamburger: white by default, dark when scrolled */
         .hamburger {
           display: none;
           flex-direction: column;
@@ -138,10 +168,12 @@ export default function Header() {
         .hamburger span {
           display: block;
           width: 22px; height: 2px;
-          background: var(--color-text-main);
+          background: rgba(255,255,255,0.9);
           border-radius: 2px;
           transition: var(--transition);
         }
+        .header.scrolled .hamburger span { background: var(--color-text-main); }
+
         .mobile-nav {
           display: none;
           position: fixed;
@@ -182,7 +214,7 @@ export default function Header() {
                 <circle cx="19" cy="12" r="2" fill="#fff"/>
               </svg>
             </div>
-            <div className="logo-text">L<span>n</span>D</div>
+            <div className="logo-text">L<span className="logo-accent">n</span>T</div>
           </div>
 
           <nav className="nav">

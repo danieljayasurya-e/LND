@@ -9,7 +9,7 @@ const quickLinks = [
 ];
 
 export default function Footer() {
-  const waMsg = encodeURIComponent("Hi LnD! I'm interested in enrolling. Please share more details.");
+  const waMsg = encodeURIComponent("Hi LnT! I'm interested in enrolling. Please share more details.");
 
   const scrollTo = (e, href) => {
     e.preventDefault();
@@ -170,7 +170,7 @@ export default function Footer() {
                     <circle cx="19" cy="12" r="2" fill="#fff"/>
                   </svg>
                 </div>
-                <div className="footer-logo-name">L<span>n</span>D</div>
+                <div className="footer-logo-name">L<span>n</span>T</div>
               </div>
               <div className="footer-tagline">"Learn from Professionals. Build for the Real World."</div>
               <p className="footer-desc">
@@ -216,7 +216,7 @@ export default function Footer() {
 
           <div className="footer-bottom">
             <div className="footer-copy">
-              © 2026 <strong>LnD</strong>. All Rights Reserved. Built with ❤️ in Tamil Nadu.
+              © 2026 <strong>LnT</strong>. All Rights Reserved. Built with ❤️ in Tamil Nadu.
             </div>
             <div className="footer-bottom-links">
               <a href="#about" onClick={(e) => scrollTo(e, '#about')}>Privacy Policy</a>
