@@ -97,6 +97,54 @@ export default function Header() {
         .header.scrolled .logo-text { color: var(--color-dark); }
         .header.scrolled .logo-text .logo-accent { color: var(--color-primary); }
 
+        /* Tagline */
+        .logo-tagline {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin-left: 14px;
+          padding-left: 14px;
+          border-left: 1px solid rgba(255,255,255,0.25);
+        }
+        .logo-tagline-text {
+          font-family: var(--font-display);
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 0.6px;
+          text-transform: uppercase;
+          background: linear-gradient(90deg, #ffffff 0%, var(--color-accent) 60%, #fff176 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          transition: opacity 0.28s ease;
+          white-space: nowrap;
+        }
+        .logo-tagline-dot {
+          width: 6px; height: 6px;
+          border-radius: 50%;
+          background: var(--color-accent);
+          box-shadow: 0 0 6px var(--color-accent);
+          animation: pulse-dot 2s ease-in-out infinite;
+          flex-shrink: 0;
+        }
+        @keyframes pulse-dot {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.5; transform: scale(0.7); }
+        }
+        /* Scrolled: switch gradient to brand colors */
+        .header.scrolled .logo-tagline {
+          border-left-color: rgba(0,0,0,0.12);
+        }
+        .header.scrolled .logo-tagline-text {
+          background: linear-gradient(90deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-accent) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        @media (max-width: 520px) {
+          .logo-tagline { display: none; }
+        }
+
         .nav { display: flex; align-items: center; gap: 4px; }
 
         /* Default: white nav links on dark hero */
@@ -215,6 +263,10 @@ export default function Header() {
               </svg>
             </div>
             <div className="logo-text">L<span className="logo-accent">n</span>D</div>
+            <div className="logo-tagline">
+              <span className="logo-tagline-dot" />
+              <span className="logo-tagline-text">Grow Without Limit</span>
+            </div>
           </div>
 
           <nav className="nav">

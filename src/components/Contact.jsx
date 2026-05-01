@@ -433,10 +433,10 @@ export default function Contact() {
                 </div>
               </div>
 
-              <a href={waLink} target="_blank" rel="noreferrer" className="wa-btn">
+              {/* <a href={waLink} target="_blank" rel="noreferrer" className="wa-btn">
                 <WhatsAppIcon />
                 Chat on WhatsApp
-              </a>
+              </a> */}
             </div>
 
             {/* Right form column */}

@@ -246,7 +246,7 @@ export default function Footer() {
                   <span>Coimbatore, Tamil Nadu, India</span>
                 </div>
               </div>
-              <a
+              {/* <a
                 href={`https://wa.me/919999999999?text=${waMsg}`}
                 target="_blank"
                 rel="noreferrer"
@@ -254,7 +254,7 @@ export default function Footer() {
               >
                 <WhatsAppIcon />
                 WhatsApp Us
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -262,12 +262,12 @@ export default function Footer() {
             <div className="footer-copy">
               © 2026 <strong>LnD</strong>. All Rights Reserved
             </div>
-            <button className="footer-admin-btn" onClick={openAdmin} title="Manage student feedbacks">
+            {/* <button className="footer-admin-btn" onClick={openAdmin} title="Manage student feedbacks">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
               </svg>
               Manage Feedbacks
-            </button>
+            </button> */}
           </div>
         </div>
       </footer>

@@ -37,7 +37,7 @@ const TagIcon = () => (
 );
 
 const reasons = [
-  { Icon: SpeechIcon,    title: 'Regional Language',  desc: 'All sessions conducted in Tamil for better comprehension and deeper understanding.' },
+  { Icon: SpeechIcon,    title: 'Regional Language',  desc: 'All sessions conducted in Tamil & English for better comprehension and deeper understanding.' },
   { Icon: UserCheckIcon, title: 'Industry Trainers',  desc: 'Trainers are currently employed IT professionals with real-time, hands-on experience.' },
   { Icon: ToolsIcon,     title: 'Real-Time Projects', desc: 'Assignments and tasks based on live industry scenarios — not textbook problems.' },
   { Icon: TargetIcon,    title: 'Internship Support', desc: 'Hands-on internship offered to eligible students with actual project work.' },

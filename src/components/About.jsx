@@ -35,7 +35,7 @@ const CheckIcon = () => (
 );
 
 const highlights = [
-  { Icon: LanguageIcon, title: 'Taught in Tamil', desc: 'Full instruction in regional language for better understanding and retention' },
+  { Icon: LanguageIcon, title: 'Taught in Tamil & English', desc: 'Full instruction in regional language for better understanding and retention' },
   { Icon: BriefcaseIcon, title: 'Working Professionals', desc: 'Trainers are currently active in the IT industry with real-world experience' },
   { Icon: CodeIcon, title: 'Real-Time Projects', desc: 'Assignments based on live industry problems — not just theory' },
   { Icon: GradCapIcon, title: 'Internship Offered', desc: 'Selected students receive internship placements with project exposure' },
@@ -225,7 +225,7 @@ export default function About() {
                   Successfully trained at
                 </div>
                 <div className="college-names">
-                  <strong>Sona College of Technology</strong> &amp; <strong>Dr. Sivanthi Aditanar College of Engineering</strong> — with outstanding feedback from students and faculty.
+                  <strong>Sona College of Technology, Paavai Engineering College, Kings College Of Engineering </strong> &amp; <strong>Dr. Sivanthi Aditanar College of Engineering</strong> — with outstanding feedback from students and faculty.
                 </div>
               </div>
             </div>
