@@ -27,7 +27,7 @@ const HF_API_TOKEN = import.meta.env.VITE_HF_API_TOKEN || '';
 const ADMIN_EMAIL = 'ld.programinfo@gmail.com';
 // ─────────────────────────────────────────────────────────────────────────────
 
-const courses = ['Java', 'Python', 'C Programming', 'C++', 'AI & ML', 'App Development', 'MERN Stack', 'SQL'];
+const courses = ['Internship Opportunity', 'Java', 'Python', 'C Programming', 'C++', 'AI & ML', 'App Development', 'MERN Stack', 'SQL', 'Java Full Stack', 'Python Full Stack', 'Frontend Development', 'Backend Development'];
 
 // ── SVG Icons ────────────────────────────────────────────────────────────────
 const PhoneIcon = () => (
@@ -72,6 +72,20 @@ Thank you for your interest in the ${course} course at LnD Training. We are thri
 Our expert team of active IT professionals will reach out to you within 24 hours to discuss batch timings, course fee details, and enrollment.
 
 We look forward to being part of your success story. 
+
+Warm regards,
+LnD Training Team
+ld.programinfo@gmail.com`;
+
+const getInternshipBody = (name) => `Dear ${name},
+
+Thank you for your interest in the Internship Opportunity at LnD Training!
+
+We are excited to connect with you. Our internship program is designed to give you hands-on, real-world experience alongside active IT professionals.
+
+Our team will reach out to you within 24 hours to share details about available roles, stipend, duration, and the application process.
+
+We look forward to having you on board!
 
 Warm regards,
 LnD Training Team
@@ -161,7 +175,9 @@ export default function Contact() {
           to_name: form.name,
           to_email: form.email,
           course_name: form.course,
-          email_body: getDefaultBody(form.name, form.course),
+          email_body: form.course === 'Internship Opportunity'
+            ? getInternshipBody(form.name)
+            : getDefaultBody(form.name, form.course),
         });
 
         // Step 2 — Notify admin
@@ -461,7 +477,7 @@ export default function Contact() {
                         <label className="form-label">Phone Number *</label>
                         <input
                           className={`form-input${errors.phone ? ' error' : ''}`}
-                          placeholder="Starting with 6 or 9"
+                          placeholder="Enter mobile number"
                           value={form.phone}
                           maxLength={10}
                           inputMode="numeric"
@@ -484,13 +500,13 @@ export default function Contact() {
                     </div>
 
                     <div className="form-group">
-                      <label className="form-label">Course Interested In *</label>
+                      <label className="form-label">Interested In *</label>
                       <select
                         className={`form-select${errors.course ? ' error' : ''}`}
                         value={form.course}
                         onChange={e => handleChange('course', e.target.value)}
                       >
-                        <option value="">Select a course…</option>
+                        <option value="">Select an option…</option>
                         {courses.map(c => <option key={c} value={c}>{c}</option>)}
                       </select>
                       {errors.course && <div className="form-error">{errors.course}</div>}
