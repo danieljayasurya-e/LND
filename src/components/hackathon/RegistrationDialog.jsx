@@ -438,8 +438,9 @@ export function RegistrationDialog({ open, onClose }) {
               <div className="hk-result">
                 <div className="hk-result-title">Thank You!</div>
                 <p className="hk-result-sub">
-                  Your college has successfully registered for the LnD Hackathon.<br />
-                  Our team will contact you shortly.
+                  Your college has been successfully registered for the LnD Hackathon.<br/>
+
+Thank you for your interest in partnering with us. <br />Our team will review your registration and contact you shortly with the next steps and event details.
                 </p>
                 {registration.emailWarning && (
                   <p className="hk-result-warning" role="alert">{registration.emailWarning}</p>
