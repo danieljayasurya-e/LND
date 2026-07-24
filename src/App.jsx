@@ -7,6 +7,7 @@ import WhyUs from './components/WhyUs';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { HackathonFeature } from './components/hackathon/HackathonFeature';
 
 /* Shared section-level styles used across multiple components */
 const SharedStyles = () => (
@@ -46,6 +47,7 @@ export default function App() {
         <About />
         <Programs />
         <WhyUs />
+        <HackathonFeature />
         <Testimonials />
         <Contact />
       </main>
