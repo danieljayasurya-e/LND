@@ -169,23 +169,56 @@ export function WelcomePopup({ onRegisterClick }) {
             </div> */}
 
             <h2 id="hk-popup-title" className="hk-popup-title">
-              Bring Industry Experience to Your Campus
+              Bring Industry Experience to Your Campus - <span style={{ color:'rgba(0, 229, 255, 0.3)', fontWeight:'bold' }}>FREE 24 Hours Hackathon</span>
             </h2>
 
-            <div className="hk-popup-body">
-              {/* <p>
-                LnD (Learning and Development) is a team of experienced IT professionals working
-                in leading software companies.
-              </p> */}
+            <div className="hk-popup-body space-y-5 text-slate-300 leading-relaxed">
               <p>
-                LnD is an initiative to bridge the gap between academic learning and real-world industry expectations by providing practical, hands-on learning experiences.
+                Give your students the opportunity to solve real-world industry problems,
+                collaborate in teams, and receive mentorship from experienced IT
+                professionals — all through a{" "}
+                <span className="font-semibold text-white">FREE 24-hour offline hackathon</span> conducted
+                at your college.
               </p>
-              <p>
-               We believe coding alone isn't enough. Students should experience the complete software development lifecycle, just as it happens in the industry.
-              </p>
-              <p>
-                Our hackathons simulate real industry environments, enabling students to develop practical technical skills, teamwork, and problem-solving abilities expected by modern companies.
-              </p>
+
+              {/* What You'll Get */}
+              <div>
+                <h4 className="font-semibold text-white mb-2">What You'll Get</h4>
+                <ul className="space-y-2">
+                  {[
+                    "Real-world problem statements",
+                    "Mentorship from IT professionals",
+                    "Industry-standard project evaluation",
+                    "End-to-end hackathon management by LnD",
+                    "Conducted at your college campus",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm" style={{ listStyleType: 'disc', marginLeft: '1.2em' }}>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Schedule + Participation */}
+              <div className="grid grid-cols-2">
+                <div className="rounded-lg bg-white/5 border border-white/10">
+                  <p className="text-[10px] uppercase tracking-wide text-slate-400">Schedule Any Saturday (as per college convenience)</p>
+                </div>
+                <div style={{ display:'flex', gap:4}}>
+                  <p className="text-[10px] uppercase tracking-wide text-teal-400" style={{ fontWeight: 'bold' }}>Participation :</p>
+                  <p className="text-sm font-medium text-teal-300 mt-0.5">Completely FREE</p>
+                </div>
+              </div>
+
+              {/* CTA */}
+              <div className="rounded-xl bg-white/5 border border-white/10 p-4">
+                <p className="font-semibold text-teal-400 mb-1" style={{ fontWeight: 'bold' }}>Ready to Host?</p>
+                <p className="text-sm text-slate-300">
+                  Click the <span className="font-bold text-white" style={{ fontWeight:'bold'}}>"Register Your College"</span> button
+                  below to book your preferred slot.
+                </p>
+                <p className="text-xs text-slate-400 mt-2 italic" style={{ fontWeight: 'bold', color:'orange' }}>Limited slots available!</p>
+              </div>
             </div>
 
             <div className="hk-popup-actions">
